@@ -51,24 +51,19 @@
         <div class="container">
             <div class="advantages-grid">
                 <div class="advantage-box">
-                    <i class="fas fa-tape"></i>
-                    <h3>Бесплатный замер</h3>
-                    <p>Выезд специалиста для замера в удобное для вас время</p>
+                    <i class="fas fa-truck"></i>
+                    <h3>Бесплатная доставка</h3>
+                    <p>Доставим вашу покупку в удобное время и бесплатно</p>
                 </div>
                 <div class="advantage-box">
-                    <i class="fas fa-clock"></i>
-                    <h3>Установка за 1 день</h3>
-                    <p>Быстрая и качественная установка опытными мастерами</p>
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Работаем с 2009 года</h3>
+                    <p>Многолетний опыт и надежность компании</p>
                 </div>
                 <div class="advantage-box">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Гарантия до 5 лет</h3>
-                    <p>Полная гарантия на все окна и монтажные работы</p>
-                </div>
-                <div class="advantage-box">
-                    <i class="fas fa-percentage"></i>
-                    <h3>Беспроцентная рассрочка</h3>
-                    <p>Удобные варианты оплаты и выгодная рассрочка</p>
+                    <i class="fas fa-award"></i>
+                    <h3>Качество</h3>
+                    <p>Только высококачественные товары и услуги для наших клиентов</p>
                 </div>
             </div>
         </div>
@@ -78,70 +73,134 @@
     <section class="calculate-cost" id="calculate">
         <div class="container">
             <h2 class="section-title">Рассчитать стоимость</h2>
-            <div class="calculator-wrapper">
-                <form id="detailed-calculator-form">
-                    <div class="calculator-grid">
-                        <div class="form-group">
-                            <label for="window-configuration">Конфигурация окна:</label>
-                            <select id="window-configuration" required>
-                                <option value="">Выберите конфигурацию</option>
-                                <option value="single">Одностворчатые</option>
-                                <option value="double">Двухстворчатые</option>
-                                <option value="triple">Трёхстворчатые</option>
-                                <option value="balcony-door">Балконные двери</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="detailed-width">Ширина (см):</label>
-                            <input type="number" id="detailed-width" min="30" max="300" required placeholder="Введите ширину">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="detailed-height">Высота (см):</label>
-                            <input type="number" id="detailed-height" min="30" max="300" required placeholder="Введите высоту">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="profile-type">Профиль:</label>
-                            <select id="profile-type" required>
-                                <option value="">Выберите профиль</option>
-                                <option value="brushbox">Brushbox</option>
-                                <option value="rehau">Rehau</option>
-                                <option value="grunhaus">Grunhaus</option>
-                                <option value="kbe">KBE</option>
-                                <option value="wital">WItal Term</option>
-                                <option value="unknown">Не знаю</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="glass-type">Стеклопакет:</label>
-                            <select id="glass-type" required>
-                                <option value="">Выберите стеклопакет</option>
-                                <option value="single">СП 24 однокамерный</option>
-                                <option value="double">СП 32 двухкамерный</option>
-                            </select>
-                        </div>
+            <div class="calculator-card">
+                <div class="calculator-content">
+                    <div class="calculator-steps-container">
+                        <form id="detailed-calculator-form">
+                            <div class="calculator-step active" id="step-1">
+                                <h4>Выберите тип окна</h4>
+                                <div class="window-type-selection">
+                                    <label class="window-type-option">
+                                        <input type="radio" name="window-type" value="single" required>
+                                        <div class="window-type-image">
+                                            <img src="images/window-single.png" alt="Одностворчатое окно">
+                                            <span>Одностворчатое окно</span>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="window-type-option">
+                                        <input type="radio" name="window-type" value="double" required>
+                                        <div class="window-type-image">
+                                            <img src="images/window-double.png" alt="Двухстворчатое окно">
+                                            <span>Двухстворчатое окно</span>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="window-type-option">
+                                        <input type="radio" name="window-type" value="triple" required>
+                                        <div class="window-type-image">
+                                            <img src="images/window-triple.png" alt="Трехстворчатое окно">
+                                            <span>Трехстворчатое окно</span>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="window-type-option">
+                                        <input type="radio" name="window-type" value="balcony-door-double" required>
+                                        <div class="window-type-image">
+                                            <img src="images/balcony-door-double.png" alt="Балконная дверь с двухстворчатым окном">
+                                            <span>Балконная дверь с двухстворчатым окном</span>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="window-type-option">
+                                        <input type="radio" name="window-type" value="balcony-door-triple" required>
+                                        <div class="window-type-image">
+                                            <img src="images/balcony-door-triple.png" alt="Балконный блок">
+                                            <span>Балконный блок</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                
+                                <div class="calculator-nav">
+                                    <button type="button" class="btn btn-outline btn-prev" disabled>Назад</button>
+                                    <button type="button" class="btn btn-primary btn-next" data-next="2">Далее</button>
+                                </div>
+                            </div>
+                            
+                            <div class="calculator-step" id="step-2">
+                                <h4>Укажите размеры</h4>
+                                <div class="form-group">
+                                    <label for="detailed-width">Ширина, мм</label>
+                                    <input type="text" id="detailed-width" required placeholder="Введите ширину">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="detailed-height">Высота, мм</label>
+                                    <input type="text" id="detailed-height" required placeholder="Введите высоту">
+                                </div>
+                                
+                                <div class="calculator-nav">
+                                    <button type="button" class="btn btn-outline btn-prev" data-prev="1">Назад</button>
+                                    <button type="button" class="btn btn-primary btn-next" data-next="3">Далее</button>
+                                </div>
+                            </div>
+                            
+                            <div class="calculator-step" id="step-3">
+                                <h4>Дополнительные опции</h4>
+                                <div class="form-group checkboxes-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="option-mosquito" name="additional_options[]" value="mosquito">
+                                        <label for="option-mosquito">Москитная сетка</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="option-sill" name="additional_options[]" value="sill">
+                                        <label for="option-sill">Отлив</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="option-windowsill" name="additional_options[]" value="windowsill">
+                                        <label for="option-windowsill">Подоконник</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="option-none" name="additional_options[]" value="none">
+                                        <label for="option-none">Ничего из перечисленного</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="calculator-nav">
+                                    <button type="button" class="btn btn-outline btn-prev" data-prev="2">Назад</button>
+                                    <button type="button" class="btn btn-primary btn-next" data-next="4">Далее</button>
+                                </div>
+                            </div>
+                            
+                            <div class="calculator-step" id="step-4">
+                                <h4>Укажите Ваше имя и телефон для получения точной стоимости</h4>
+                                <div class="form-group">
+                                    <label for="client-name">Ваше имя</label>
+                                    <input type="text" id="client-name" required placeholder="Введите имя">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="client-phone">Телефон</label>
+                                    <input type="tel" id="client-phone" required placeholder="+375 XX XXX XX XX">
+                                </div>
+                                
+                                <div class="calculator-nav">
+                                    <button type="button" class="btn btn-outline btn-prev" data-prev="3">Назад</button>
+                                    <button type="submit" class="btn btn-primary">Отправить заявку</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                     
-                    <div class="calculation-action">
-                        <h3>Узнать точную стоимость</h3>
-                        <div class="contact-details-grid">
-                            <div class="form-group">
-                                <label for="client-name">Ваше имя</label>
-                                <input type="text" id="client-name" required placeholder="Введите имя">
+                    <div class="calculator-info">
+                        <div class="step-indicator">
+                            <div class="step-counter">
+                                <span class="current-step">1</span> из <span class="total-steps">4</span>
                             </div>
-                            
-                            <div class="form-group">
-                                <label for="client-phone">Телефон</label>
-                                <input type="tel" id="client-phone" required placeholder="+375 XX XXX XX XX">
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary">Отправить заявку</button>
+                            <p class="step-description">Ответьте на вопросы, чтобы получить расчёт стоимости</p>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </section>
