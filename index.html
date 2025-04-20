@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Установка окон в Беларуси</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🪟%3C/text%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Окна.бел</h1>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#catalog">Каталог</a></li>
+                        <li><a href="#calculate">Рассчитать стоимость</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                        <li><a href="#reviews">Отзывы</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Calculator Button -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Окна. Установка.<br>Качество.</h2>
+                <p>Профессиональная установка окон с гарантией качества и доступными ценами</p>
+                <div class="hero-cta">
+                    <a href="#calculate" class="btn btn-primary">Рассчитать стоимость</a>
+                    <a href="#contacts" class="btn btn-outline">Связаться с нами</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section (for navigation anchor) -->
+    <div id="calculate" style="height: 0;"></div>
+
+    <!-- Advantages Section -->
+    <section class="advantages-section">
+        <div class="container">
+            <div class="advantages-grid">
+                <div class="advantage-box">
+                    <i class="fas fa-tape"></i>
+                    <h3>Бесплатный замер</h3>
+                    <p>Выезд специалиста для замера в удобное для вас время</p>
+                </div>
+                <div class="advantage-box">
+                    <i class="fas fa-clock"></i>
+                    <h3>Установка за 1 день</h3>
+                    <p>Быстрая и качественная установка опытными мастерами</p>
+                </div>
+                <div class="advantage-box">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Гарантия до 5 лет</h3>
+                    <p>Полная гарантия на все окна и монтажные работы</p>
+                </div>
+                <div class="advantage-box">
+                    <i class="fas fa-percentage"></i>
+                    <h3>Беспроцентная рассрочка</h3>
+                    <p>Удобные варианты оплаты и выгодная рассрочка</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculate Cost Section -->
+    <section class="calculate-cost" id="calculate">
+        <div class="container">
+            <h2 class="section-title">Рассчитать стоимость</h2>
+            <div class="calculator-wrapper">
+                <form id="detailed-calculator-form">
+                    <div class="calculator-grid">
+                        <div class="form-group">
+                            <label for="window-configuration">Конфигурация окна:</label>
+                            <select id="window-configuration" required>
+                                <option value="">Выберите конфигурацию</option>
+                                <option value="single">Одностворчатые</option>
+                                <option value="double">Двухстворчатые</option>
+                                <option value="triple">Трёхстворчатые</option>
+                                <option value="balcony-door">Балконные двери</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="detailed-width">Ширина (см):</label>
+                            <input type="number" id="detailed-width" min="30" max="300" required placeholder="Введите ширину">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="detailed-height">Высота (см):</label>
+                            <input type="number" id="detailed-height" min="30" max="300" required placeholder="Введите высоту">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="profile-type">Профиль:</label>
+                            <select id="profile-type" required>
+                                <option value="">Выберите профиль</option>
+                                <option value="brushbox">Brushbox</option>
+                                <option value="rehau">Rehau</option>
+                                <option value="grunhaus">Grunhaus</option>
+                                <option value="kbe">KBE</option>
+                                <option value="wital">WItal Term</option>
+                                <option value="unknown">Не знаю</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="glass-type">Стеклопакет:</label>
+                            <select id="glass-type" required>
+                                <option value="">Выберите стеклопакет</option>
+                                <option value="single">СП 24 однокамерный</option>
+                                <option value="double">СП 32 двухкамерный</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="calculation-action">
+                        <h3>Узнать точную стоимость</h3>
+                        <div class="contact-details-grid">
+                            <div class="form-group">
+                                <label for="client-name">Ваше имя</label>
+                                <input type="text" id="client-name" required placeholder="Введите имя">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="client-phone">Телефон</label>
+                                <input type="tel" id="client-phone" required placeholder="+375 XX XXX XX XX">
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Отправить заявку</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Modal -->
+    <div id="calculator-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Рассчитать стоимость окон</h2>
+            <form id="calculator-form">
+                <div class="form-group">
+                    <label for="window-type">Тип окна:</label>
+                    <select id="window-type" required>
+                        <option value="">Выберите тип окна</option>
+                        <option value="plastic">Пластиковое окно</option>
+                        <option value="aluminum">Алюминиевое окно</option>
+                        <option value="double">Стеклопакет</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="window-width">Ширина (см):</label>
+                    <input type="number" id="window-width" min="30" max="300" required>
+                </div>
+                <div class="form-group">
+                    <label for="window-height">Высота (см):</label>
+                    <input type="number" id="window-height" min="30" max="300" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Рассчитать</button>
+            </form>
+            <div id="calculation-result" class="hidden">
+                <h3>Примерная стоимость:</h3>
+                <p id="result-price"></p>
+                <p>*Окончательная цена может отличаться после замера</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Catalog Section -->
+    <section class="catalog" id="catalog">
+        <div class="container">
+            <h2 class="section-title">Выбрать окна</h2>
+            <div class="catalog-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/plastic-window.jpg" alt="Пластиковое окно">
+                    </div>
+                    <div class="product-info">
+                        <h3>Пластиковые окна</h3>
+                        <p>Современные пластиковые окна обеспечивают отличную теплоизоляцию и защиту от шума для вашего дома.</p>
+                        <a href="#contacts" class="btn btn-primary">Заказать замер</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/aluminum-window.jpg" alt="Алюминиевое окно">
+                    </div>
+                    <div class="product-info">
+                        <h3>Алюминиевые окна</h3>
+                        <p>Надежные и современные алюминиевые окна идеально подходят для офисов и коммерческих помещений.</p>
+                        <a href="#contacts" class="btn btn-primary">Заказать замер</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/double-glazed.jpg" alt="Стеклопакет">
+                    </div>
+                    <div class="product-info">
+                        <h3>Стеклопакеты</h3>
+                        <p>Высококачественные стеклопакеты с энергосберегающими и шумоизоляционными свойствами.</p>
+                        <a href="#contacts" class="btn btn-primary">Заказать замер</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section class="contacts" id="contacts">
+        <div class="container">
+            <h2 class="section-title">Связаться с нами</h2>
+            <div class="contacts-grid">
+                <div class="contact-info">
+                    <h3>Наши контакты</h3>
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Телефон</h4>
+                                <span>+375 XX XXX-XX-XX</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Адрес</h4>
+                                <span>г. Минск, ул. Примерная, д. 123</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="far fa-clock"></i>
+                            <div>
+                                <h4>Время работы</h4>
+                                <span>Пн-Пт: 9:00 - 18:00, Сб: 10:00 - 15:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <h4>Мы в мессенджерах</h4>
+                        <div class="social-buttons">
+                            <a href="#" class="social-btn whatsapp">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="#" class="social-btn telegram">
+                                <i class="fab fa-telegram"></i> Telegram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <div class="contact-form">
+                        <h3>Оставить заявку</h3>
+                        <p>Заполните форму и мы свяжемся с вами в ближайшее время</p>
+                        <form id="request-form">
+                            <div class="form-group">
+                                <label for="name">Ваше имя</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Номер телефона</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="comment">Комментарий</label>
+                                <textarea id="comment" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Отправить заявку</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <h2 class="section-title">Отзывы наших клиентов</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-content">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">«Очень довольны качеством окон и профессионализмом мастеров. Установка прошла быстро и чисто. Рекомендую!»</p>
+                    </div>
+                    <div class="review-author-info">
+                        <div class="review-avatar">
+                            <img src="images/avatar-1.jpg" alt="Александр Иванов">
+                        </div>
+                        <div>
+                            <div class="review-author">Александр Иванов</div>
+                            <div class="review-date">Май 2023</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-content">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">«Заказывала пластиковые окна для всей квартиры. Отличное качество, хорошая шумоизоляция. Очень теплые даже в сильные морозы.»</p>
+                    </div>
+                    <div class="review-author-info">
+                        <div class="review-avatar">
+                            <img src="images/avatar-2.jpg" alt="Елена Петрова">
+                        </div>
+                        <div>
+                            <div class="review-author">Елена Петрова</div>
+                            <div class="review-date">Апрель 2023</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-content">
+                        <div class="review-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="review-text">«Заказывал алюминиевые окна для офиса. Качество на высоте, монтаж выполнен аккуратно и в срок. Отдельное спасибо за профессиональную консультацию.»</p>
+                    </div>
+                    <div class="review-author-info">
+                        <div class="review-avatar">
+                            <img src="images/avatar-3.jpg" alt="Сергей Михайлов">
+                        </div>
+                        <div>
+                            <div class="review-author">Сергей Михайлов</div>
+                            <div class="review-date">Март 2023</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Окна.бел</h2>
+                    <p>Качественные окна и профессиональная установка</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Навигация</h3>
+                    <ul>
+                        <li><a href="#catalog">Каталог</a></li>
+                        <li><a href="#calculate">Рассчитать стоимость</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                        <li><a href="#reviews">Отзывы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-phone"></i> +375 XX XXX-XX-XX</p>
+                    <p><i class="fas fa-envelope"></i> info@okna.bel</p>
+                    <p><i class="fas fa-map-marker-alt"></i> г. Минск, ул. Примерная, д. 123</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Окна.бел. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div id="scroll-to-top" class="scroll-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
