@@ -103,6 +103,29 @@ body { background-color: var(--light-color); color: var(--text-color); }
   color: #ffffff;
   border-width: 2px; /* Thicker border */
 }
+.hero h2, 
+.hero p {
+    font-weight: 800; /* Extra bold */
+    letter-spacing: 1px; /* Add more space between letters */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* Add subtle shadow for definition */
+}
+
+/* Additional enhancement for larger devices */
+@media (min-width: 768px) {
+    .hero h2 {
+        font-size: 56px; /* Larger font size on bigger screens */
+        max-width: 800px; /* Allow text container to be wider */
+    }
+    
+    .hero p {
+        font-size: 24px;
+        max-width: 800px;
+    }
+    
+    .hero-content {
+        max-width: 800px; /* Increase from the default 600px */
+    }
+}
 .advantage-box { background-color: var(--light-color); border: 1px solid var(--border-color); }
 .advantage-box i { color: var(--primary-color); }
 .advantage-box h3 { color: var(--primary-color); }
@@ -142,3 +165,34 @@ body { background-color: var(--light-color); color: var(--text-color); }
     max-width: 600px;
     margin: 0 auto 0 0;
 }
+
+/* Privacy consent styling */
+.privacy-consent {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.privacy-consent input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    accent-color: var(--primary-color);
+}
+
+.privacy-consent label {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.privacy-link {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.privacy-link:hover {
+    text-decoration: none;
+}
+
+/* Icon for privacy consent */
+
