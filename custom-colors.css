@@ -1,0 +1,144 @@
+/* Custom color scheme based on Original Sash website */
+:root {
+  --primary-color: #1a3352;  /* Navy blue */
+  --secondary-color: #455a74; /* Lighter navy blue */
+  --light-color: #FFFFFF;    /* White background */
+  --accent-color: #6b788e;   /* Gray for navigation */
+  --dark-color: #0d1c2e;     /* Darker navy */
+  --text-color: #333333;     /* Dark text */
+  --border-color: #e5e5e5;   /* Light gray for borders */
+}
+
+/* Apply new colors to elements */
+body { background-color: var(--light-color); color: var(--text-color); }
+.header { background-color: var(--light-color); color: var(--primary-color); }
+.logo h1 { color: var(--primary-color); }
+.main-nav a { color: var(--accent-color); }
+.main-nav a:hover { color: var(--primary-color); }
+.main-nav a::after { background-color: var(--primary-color); }
+
+.hero { background: linear-gradient(rgba(26, 51, 82, 0.8), rgb(236, 244, 255)); }
+.hero-content { background-color: rgba(255, 255, 255, 0.9); color: var(--primary-color); }
+.btn-primary { background-color: var(--primary-color); color: var(--light-color); }
+.btn-outline { border-color: var(--primary-color); color: var(--primary-color); }
+.btn-primary:hover { background-color: var(--secondary-color); }
+.btn-outline:hover { background-color: var(--primary-color); }
+.section-title { color: var(--primary-color); }
+.section-title::after { background-color: var(--primary-color); }
+
+
+/* Dark overlay to ensure text is readable */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(26, 51, 82, 0.1); /* Navy blue overlay */
+  z-index: 1;
+}
+.hero {
+  background: var(--light-color);
+  padding: 60px 0;
+  color: var(--primary-color);
+}
+
+.hero::before {
+  display: none; /* Remove the overlay */
+}
+
+.hero-flex {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.hero-content {
+  flex: 1;
+  background: transparent; /* Remove any background */
+  padding: 0;
+}
+
+.hero-image {
+  flex: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .hero-flex {
+      flex-direction: column;
+  }
+  
+  .hero-content {
+      text-align: center;
+      order: 2;
+  }
+  
+  .hero-image {
+      order: 1;
+  }
+  
+}
+.hero h2, .hero p {
+  color: #ffffff; /* Pure white */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Slight glow effect */
+  font-weight: 600; /* Make text slightly bolder */
+}
+
+/* Reduce the overlay opacity to let more of the background show */
+.hero::before {
+  background: rgba(26, 51, 82, 0.6); /* Reduce opacity from 0.7 to 0.6 */
+}
+
+/* Make buttons more visible */
+.hero .btn-outline {
+  border-color: #ffffff;
+  color: #ffffff;
+  border-width: 2px; /* Thicker border */
+}
+.advantage-box { background-color: var(--light-color); border: 1px solid var(--border-color); }
+.advantage-box i { color: var(--primary-color); }
+.advantage-box h3 { color: var(--primary-color); }
+.advantage-box p { color: var(--text-color); }
+
+.calculate-cost { background-color: var(--light-color); }
+.calculate-cost .section-title { color: var(--primary-color); }
+.calculate-cost .section-title::after { background-color: var(--primary-color); }
+
+.calculator-card { border-color: var(--border-color); box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); }
+.calculator-info { background-color: var(--secondary-color); color: var(--light-color); }
+.current-step { background-color: var(--light-color); color: var(--secondary-color); }
+.step-counter, .step-description { color: var(--light-color); }
+/* Hero section with background image */
+.hero {
+    background-image: url('images/balcon3.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 100px 0;
+    color: var(--light-color);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(26, 51, 82, 0.7);
+    z-index: 1;
+    display: block;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    max-width: 600px;
+    margin: 0 auto 0 0;
+}

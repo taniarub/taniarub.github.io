@@ -7,8 +7,10 @@
     --dark-color: #2c3e50;
     --border-color: #ddd;
     --box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    --heading-font: 'Helvetica Neue', Arial, sans-serif;
-    --body-font: 'Open Sans', Arial, sans-serif;
+    --heading-font: 'Lora', serif;
+    --body-font: 'Lora', serif;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
 }
 
 * {
