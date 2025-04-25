@@ -106,10 +106,26 @@ document.addEventListener('DOMContentLoaded', function() {
         // Step descriptions
         const stepDescriptions = [
             'Выберите тип окна, чтобы продолжить расчет',
+            'Выберите тип оконной створки для вашего окна',
             'Укажите точные размеры окна',
             'Выберите дополнительные опции для вашего заказа',
             'Оставьте контактные данные для получения точной стоимости'
         ];
+        
+        // Handle window type selection for opening type options
+        const windowTypeRadios = document.querySelectorAll('input[name="window-type"]');
+        const singleWindowOptions = document.getElementById('single-window-options');
+        const doubleWindowOptions = document.getElementById('double-window-options');
+        const tripleWindowOptions = document.getElementById('triple-window-options');
+        const balconyBlockOptions = document.getElementById('balcony-block-options');
+        
+        // Add event listeners to window type radios
+        windowTypeRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                // Store the selected window type
+                localStorage.setItem('selectedWindowType', this.value);
+            });
+        });
         
         // Handle next button clicks
         nextButtons.forEach(button => {
@@ -119,6 +135,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Validate current step
                 if (validateStep(currentStep)) {
+                    // Special handling for step 1 to step 2 (opening type options)
+                    if (currentStep === 1 && nextStep === 2) {
+                        // Get the selected window type
+                        const selectedWindowType = localStorage.getItem('selectedWindowType');
+                        
+                        // Hide all opening type sections first
+                        singleWindowOptions.style.display = 'none';
+                        doubleWindowOptions.style.display = 'none';
+                        tripleWindowOptions.style.display = 'none';
+                        balconyBlockOptions.style.display = 'none';
+                        
+                        // Show the appropriate section based on the window type
+                        if (selectedWindowType === 'single') {
+                            singleWindowOptions.style.display = 'block';
+                        } else if (selectedWindowType === 'double') {
+                            doubleWindowOptions.style.display = 'block';
+                        } else if (selectedWindowType === 'triple') {
+                            tripleWindowOptions.style.display = 'block';
+                        } else if (selectedWindowType === 'balcony-door-double') {
+                            doubleWindowOptions.style.display = 'block';
+                        } else if (selectedWindowType === 'balcony-door-triple') {
+                            balconyBlockOptions.style.display = 'block';
+                        }
+                    }
+                    
                     // Hide current step
                     steps[currentStep - 1].classList.remove('active');
                     
@@ -142,23 +183,23 @@ document.addEventListener('DOMContentLoaded', function() {
         prevButtons.forEach(button => {
             button.addEventListener('click', function() {
                 if (this.hasAttribute('data-prev')) {
-                    const currentStep = parseInt(this.getAttribute('data-prev'));
-                    const prevStep = parseInt(this.getAttribute('data-prev')) - 1;
+                    const currentStepIndex = parseInt(this.closest('.calculator-step').id.replace('step-', '')) - 1;
+                    const prevStepIndex = parseInt(this.getAttribute('data-prev')) - 1;
                     
                     // Hide current step
-                    steps[currentStep].classList.remove('active');
+                    steps[currentStepIndex].classList.remove('active');
                     
                     // Show previous step
-                    steps[prevStep].classList.add('active');
+                    steps[prevStepIndex].classList.add('active');
                     
                     // Update step indicator
                     if (currentStepDisplay) {
-                        currentStepDisplay.textContent = prevStep + 1;
+                        currentStepDisplay.textContent = prevStepIndex + 1;
                     }
                     
                     // Update step description
-                    if (stepDescription && stepDescriptions[prevStep]) {
-                        stepDescription.textContent = stepDescriptions[prevStep];
+                    if (stepDescription && stepDescriptions[prevStepIndex]) {
+                        stepDescription.textContent = stepDescriptions[prevStepIndex];
                     }
                 }
             });
@@ -185,6 +226,37 @@ document.addEventListener('DOMContentLoaded', function() {
             const width = document.getElementById('detailed-width').value;
             const height = document.getElementById('detailed-height').value;
             
+            // Get selected opening types
+            let openingTypesInfo = '';
+            
+            if (selectedWindowType === 'single') {
+                const singleOpeningType = document.querySelector('input[name="single-opening-type"]:checked');
+                if (singleOpeningType) {
+                    openingTypesInfo = `Тип створки: ${translateOpeningType(singleOpeningType.value)}`;
+                }
+            } else if (selectedWindowType === 'double' || selectedWindowType === 'balcony-door-double') {
+                const opening1 = document.querySelector('input[name="double-opening-type-1"]:checked');
+                const opening2 = document.querySelector('input[name="double-opening-type-2"]:checked');
+                
+                if (opening1 && opening2) {
+                    openingTypesInfo = `Окно 1: ${translateOpeningType(opening1.value)}, Окно 2: ${translateOpeningType(opening2.value)}`;
+                }
+            } else if (selectedWindowType === 'triple') {
+                const opening1 = document.querySelector('input[name="triple-opening-type-1"]:checked');
+                const opening2 = document.querySelector('input[name="triple-opening-type-2"]:checked');
+                const opening3 = document.querySelector('input[name="triple-opening-type-3"]:checked');
+                
+                if (opening1 && opening2 && opening3) {
+                    openingTypesInfo = `Окно 1: ${translateOpeningType(opening1.value)}, Окно 2: ${translateOpeningType(opening2.value)}, Окно 3: ${translateOpeningType(opening3.value)}`;
+                }
+            } else if (selectedWindowType === 'balcony-door-triple') {
+                const balconyBlockOpening = document.querySelector('input[name="balcony-block-opening-type"]:checked');
+                
+                if (balconyBlockOpening) {
+                    openingTypesInfo = `Окно 1: ${translateOpeningType(balconyBlockOpening.value)}`;
+                }
+            }
+            
             // Get selected options
             const options = [];
             const checkboxes = document.querySelectorAll('input[name="additional_options[]"]:checked');
@@ -193,105 +265,114 @@ document.addEventListener('DOMContentLoaded', function() {
                 options.push(checkbox.value);
             });
             
-            alert(`Спасибо, ${name}! Ваша заявка на расчет стоимости ${translateWindowType(selectedWindowType)} (${width}x${height} мм) принята. Мы свяжемся с вами в ближайшее время по телефону ${phone}.`);
+            alert(`Спасибо, ${name}! 
+Ваша заявка на расчет стоимости ${translateWindowType(selectedWindowType)} (${width}x${height} мм) принята.
+${openingTypesInfo}
+Мы свяжемся с вами в ближайшее время по телефону ${phone}.`);
             
             // Reset form and return to step 1
             detailedCalculatorForm.reset();
             steps.forEach(step => step.classList.remove('active'));
             steps[0].classList.add('active');
-            
             if (currentStepDisplay) {
-                currentStepDisplay.textContent = '1';
+                currentStepDisplay.textContent = "1";
             }
-            
             if (stepDescription) {
                 stepDescription.textContent = stepDescriptions[0];
             }
         });
         
-        // Helper function to validate steps
+        // Validate steps
         function validateStep(stepNumber) {
-            switch (stepNumber) {
+            switch(stepNumber) {
                 case 1:
                     // Validate window type selection
-                    const windowTypeRadios = document.querySelectorAll('input[name="window-type"]');
-                    let isWindowTypeSelected = false;
-                    
-                    windowTypeRadios.forEach(radio => {
-                        if (radio.checked) {
-                            isWindowTypeSelected = true;
-                        }
-                    });
-                    
-                    if (!isWindowTypeSelected) {
+                    const windowTypeSelected = document.querySelector('input[name="window-type"]:checked');
+                    if (!windowTypeSelected) {
                         alert('Пожалуйста, выберите тип окна');
                         return false;
                     }
                     return true;
-                    
+                
                 case 2:
+                    // Validate opening type selection
+                    const selectedWindowType = localStorage.getItem('selectedWindowType');
+                    
+                    if (selectedWindowType === 'single') {
+                        const singleOpeningType = document.querySelector('input[name="single-opening-type"]:checked');
+                        if (!singleOpeningType) {
+                            alert('Пожалуйста, выберите тип створки');
+                            return false;
+                        }
+                    } else if (selectedWindowType === 'double' || selectedWindowType === 'balcony-door-double') {
+                        const opening1 = document.querySelector('input[name="double-opening-type-1"]:checked');
+                        const opening2 = document.querySelector('input[name="double-opening-type-2"]:checked');
+                        
+                        if (!opening1 || !opening2) {
+                            alert('Пожалуйста, выберите тип створки для обоих окон');
+                            return false;
+                        }
+                    } else if (selectedWindowType === 'triple') {
+                        const opening1 = document.querySelector('input[name="triple-opening-type-1"]:checked');
+                        const opening2 = document.querySelector('input[name="triple-opening-type-2"]:checked');
+                        const opening3 = document.querySelector('input[name="triple-opening-type-3"]:checked');
+                        
+                        if (!opening1 || !opening2 || !opening3) {
+                            alert('Пожалуйста, выберите тип створки для всех трех окон');
+                            return false;
+                        }
+                    } else if (selectedWindowType === 'balcony-door-triple') {
+                        const balconyBlockOpening = document.querySelector('input[name="balcony-block-opening-type"]:checked');
+                        
+                        if (!balconyBlockOpening) {
+                            alert('Пожалуйста, выберите тип створки для окна');
+                            return false;
+                        }
+                    }
+                    return true;
+                
+                case 3:
                     // Validate dimensions
                     const width = document.getElementById('detailed-width').value;
                     const height = document.getElementById('detailed-height').value;
                     
-                    if (!width || isNaN(width)) {
-                        alert('Пожалуйста, введите корректную ширину');
+                    if (!width || !height) {
+                        alert('Пожалуйста, укажите размеры окна');
                         return false;
                     }
                     
-                    if (!height || isNaN(height)) {
-                        alert('Пожалуйста, введите корректную высоту');
+                    if (isNaN(width) || isNaN(height)) {
+                        alert('Размеры должны быть числами');
                         return false;
                     }
-                    return true;
                     
-                case 3:
-                    // No validation needed for options
                     return true;
-                    
+                
                 default:
                     return true;
             }
         }
         
-        // Helper function to translate window type
         function translateWindowType(type) {
             const translations = {
-                'single': 'одностворчатого окна',
-                'double': 'двухстворчатого окна',
-                'triple': 'трехстворчатого окна',
-                'balcony-door-double': 'балконной двери с окном',
-                'balcony-door-triple': 'балконного блока'
+                'single': 'Одностворчатое окно',
+                'double': 'Двухстворчатое окно',
+                'triple': 'Трехстворчатое окно',
+                'balcony-door-double': 'Балконная дверь с двухстворчатым окном',
+                'balcony-door-triple': 'Балконный блок'
             };
             
             return translations[type] || type;
         }
         
-        // Extra functionality - allow only one option to be none
-        const noneOption = document.getElementById('option-none');
-        const otherOptions = document.querySelectorAll('input[name="additional_options[]"]:not(#option-none)');
-        
-        if (noneOption) {
-            noneOption.addEventListener('change', function() {
-                if (this.checked) {
-                    otherOptions.forEach(option => {
-                        option.checked = false;
-                        option.disabled = true;
-                    });
-                } else {
-                    otherOptions.forEach(option => {
-                        option.disabled = false;
-                    });
-                }
-            });
+        function translateOpeningType(type) {
+            const translations = {
+                'fixed': 'Глухая',
+                'turn': 'Поворотная',
+                'tilt-turn': 'Поворотно-откидная'
+            };
             
-            otherOptions.forEach(option => {
-                option.addEventListener('change', function() {
-                    if (this.checked) {
-                        noneOption.checked = false;
-                    }
-                });
-            });
+            return translations[type] || type;
         }
     }
     

@@ -126,6 +126,7 @@ body { background-color: var(--light-color); color: var(--text-color); }
         max-width: 800px; /* Increase from the default 600px */
     }
 }
+
 .advantage-box { background-color: var(--light-color); border: 1px solid var(--border-color); }
 .advantage-box i { color: var(--primary-color); }
 .advantage-box h3 { color: var(--primary-color); }
@@ -195,4 +196,94 @@ body { background-color: var(--light-color); color: var(--text-color); }
 }
 
 /* Icon for privacy consent */
+
+/* Window opening type styles */
+.opening-type-section {
+    display: none; /* Hidden by default, will be shown via JavaScript */
+    margin-bottom: 20px;
+}
+
+.opening-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.opening-option {
+    flex: 1;
+    min-width: 120px;
+    background-color: var(--light-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.opening-option:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.opening-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.opening-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.opening-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.opening-option span {
+    display: block;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-top: 8px;
+}
+
+.opening-option input[type="radio"]:checked + .opening-image + span,
+.opening-option input[type="radio"]:checked + span {
+    color: var(--primary-color);
+}
+
+.opening-option input[type="radio"]:checked + .opening-image + span::after,
+.opening-option input[type="radio"]:checked + span::after {
+    content: '✓';
+    display: inline-block;
+    margin-left: 5px;
+    color: var(--primary-color);
+}
+
+/* Highlight selected option */
+.opening-option input[type="radio"]:checked ~ .opening-option {
+    border-color: var(--primary-color);
+    background-color: rgba(26, 51, 82, 0.05);
+}
+
+.opening-option input[type="radio"]:checked + .opening-image {
+    background-color: rgba(26, 51, 82, 0.05);
+}
+
+@media (max-width: 768px) {
+    .opening-options {
+        flex-direction: column;
+    }
+}
 
