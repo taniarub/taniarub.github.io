@@ -140,6 +140,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Get the selected window type
                         const selectedWindowType = localStorage.getItem('selectedWindowType');
                         
+                        // If 'other', skip to step 3
+                        if (selectedWindowType === 'other') {
+                            steps[currentStep - 1].classList.remove('active');
+                            steps[2].classList.add('active'); // step 3 (index 2)
+                            if (currentStepDisplay) currentStepDisplay.textContent = 3;
+                            if (stepDescription && stepDescriptions[2]) stepDescription.textContent = stepDescriptions[2];
+                            return;
+                        }
+                        
                         // Hide all opening type sections first
                         singleWindowOptions.style.display = 'none';
                         doubleWindowOptions.style.display = 'none';
