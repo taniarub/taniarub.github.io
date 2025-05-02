@@ -1,0 +1,52 @@
+<svg width="150" height="300" viewBox="0 0 150 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .frame {
+        fill: none;
+        stroke: #6c757d; /* Gray frame */
+        stroke-width: 5;
+      }
+      .glass {
+        fill: #e9ecef; /* Light gray glass */
+        stroke: #adb5bd; /* Slightly darker gray for glass border */
+        stroke-width: 1;
+      }
+      .panel {
+        fill: #f8f9fa; /* White panel */
+        stroke: #adb5bd;
+        stroke-width: 1;
+      }
+      .handle {
+        fill: #6c757d;
+        stroke: #495057;
+        stroke-width: 0.5;
+      }
+      .opening-line {
+        fill: none;
+        stroke: #4da9ff; /* Blue opening indicator */
+        stroke-width: 1.5;
+        stroke-dasharray: 4, 2;
+      }
+    </style>
+  </defs>
+
+  <!-- Outer Frame -->
+  <rect class="frame" x="2.5" y="2.5" width="145" height="295" rx="3" ry="3"/>
+
+  <!-- Inner Door Frame -->
+  <rect class="frame" x="15" y="15" width="120" height="270" rx="2" ry="2"/>
+
+  <!-- Glass Area -->
+  <rect class="glass" x="25" y="25" width="100" height="180"/>
+
+  <!-- Bottom Panel -->
+  <rect class="panel" x="25" y="215" width="100" height="60"/>
+
+  <!-- Handle -->
+  <rect class="handle" x="30" y="145" width="15" height="5" rx="1" ry="1"/>
+  <rect class="handle" x="35" y="140" width="5" height="15" rx="1" ry="1"/>
+
+  <!-- Opening Indicator (Turn) -->
+  <path class="opening-line" d="M 25 25 A 90 90 0 0 1 25 205"/>
+
+</svg>
