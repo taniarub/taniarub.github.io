@@ -118,6 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const doubleWindowOptions = document.getElementById('double-window-options');
         const tripleWindowOptions = document.getElementById('triple-window-options');
         const balconyBlockOptions = document.getElementById('balcony-block-options');
+        const balconyDoorDoubleOptions = document.getElementById('balcony-door-double-options');
         
         // Add event listeners to window type radios
         windowTypeRadios.forEach(radio => {
@@ -140,12 +141,20 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Get the selected window type
                         const selectedWindowType = localStorage.getItem('selectedWindowType');
                         
-                        // If 'other', skip to step 3
+                        // If 'other' is selected, skip to step 3
                         if (selectedWindowType === 'other') {
+                            // Hide current step
                             steps[currentStep - 1].classList.remove('active');
-                            steps[2].classList.add('active'); // step 3 (index 2)
-                            if (currentStepDisplay) currentStepDisplay.textContent = 3;
-                            if (stepDescription && stepDescriptions[2]) stepDescription.textContent = stepDescriptions[2];
+                            // Show step 3
+                            steps[2].classList.add('active');
+                            // Update step indicator
+                            if (currentStepDisplay) {
+                                currentStepDisplay.textContent = 3;
+                            }
+                            // Update step description
+                            if (stepDescription && stepDescriptions[2]) {
+                                stepDescription.textContent = stepDescriptions[2];
+                            }
                             return;
                         }
                         
@@ -154,6 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         doubleWindowOptions.style.display = 'none';
                         tripleWindowOptions.style.display = 'none';
                         balconyBlockOptions.style.display = 'none';
+                        balconyDoorDoubleOptions.style.display = 'none';
                         
                         // Show the appropriate section based on the window type
                         if (selectedWindowType === 'single') {
@@ -163,7 +173,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         } else if (selectedWindowType === 'triple') {
                             tripleWindowOptions.style.display = 'block';
                         } else if (selectedWindowType === 'balcony-door-double') {
-                            doubleWindowOptions.style.display = 'block';
+                            if (balconyDoorDoubleOptions) {
+                                balconyDoorDoubleOptions.style.display = 'block';
+                            }
                         } else if (selectedWindowType === 'balcony-door-triple') {
                             balconyBlockOptions.style.display = 'block';
                         }
@@ -418,4 +430,170 @@ ${openingTypesInfo}
             }
         });
     });
+    
+    // Advantages section scroll functionality
+    const scrollContainer = document.querySelector('.advantages-scroll');
+    const leftArrow = document.querySelector('.scroll-left');
+    const rightArrow = document.querySelector('.scroll-right');
+    
+    if (scrollContainer && leftArrow && rightArrow) {
+        // Scroll amount for each click (adjust as needed)
+        const scrollAmount = 300;
+        
+        leftArrow.addEventListener('click', () => {
+            scrollContainer.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+            pauseAutoScroll();
+        });
+        
+        rightArrow.addEventListener('click', () => {
+            scrollContainer.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+            pauseAutoScroll();
+        });
+        
+        // Update arrow visibility based on scroll position
+        const updateArrowVisibility = () => {
+            leftArrow.style.opacity = scrollContainer.scrollLeft <= 0 ? '0.5' : '1';
+            rightArrow.style.opacity = 
+                scrollContainer.scrollLeft >= (scrollContainer.scrollWidth - scrollContainer.clientWidth - 1) ? '0.5' : '1';
+        };
+        
+        scrollContainer.addEventListener('scroll', () => {
+            updateArrowVisibility();
+            pauseAutoScroll();
+        });
+        window.addEventListener('resize', updateArrowVisibility);
+        
+        // Initial check
+        updateArrowVisibility();
+
+        // --- Carousel auto-scroll logic ---
+        let autoScrollInterval = null;
+        let autoScrollPaused = false;
+        let autoScrollTimeout = null;
+
+        function startAutoScroll() {
+            if (autoScrollInterval) return;
+            autoScrollInterval = setInterval(() => {
+                if (autoScrollPaused) return;
+                // If at the end, scroll back to start
+                if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth - 1) {
+                    scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                }
+            }, 3000);
+        }
+
+        function pauseAutoScroll() {
+            autoScrollPaused = true;
+            clearInterval(autoScrollInterval);
+            autoScrollInterval = null;
+            clearTimeout(autoScrollTimeout);
+            autoScrollTimeout = setTimeout(() => {
+                autoScrollPaused = false;
+                startAutoScroll();
+            }, 6000); // Resume after 6 seconds of inactivity
+        }
+
+        scrollContainer.addEventListener('mouseenter', pauseAutoScroll);
+        scrollContainer.addEventListener('mouseleave', () => {
+            autoScrollPaused = false;
+            startAutoScroll();
+        });
+
+        // Start auto-scroll
+        startAutoScroll();
+    }
+
+    // About Us Carousel functionality
+    const carousel = document.querySelector('.about-us-carousel');
+    if (carousel) {
+        const track = carousel.querySelector('.carousel-track');
+        let images = Array.from(track.querySelectorAll('img'));
+        const leftArrow = carousel.querySelector('.carousel-arrow.left');
+        const rightArrow = carousel.querySelector('.carousel-arrow.right');
+        let currentIndex = 0;
+        let isDragging = false;
+        let isTransitioning = false;
+
+        // Clone first and last images for infinite effect
+        const firstClone = images[0].cloneNode(true);
+        const lastClone = images[images.length - 1].cloneNode(true);
+        track.appendChild(firstClone);
+        track.insertBefore(lastClone, images[0]);
+        images = Array.from(track.querySelectorAll('img'));
+        currentIndex = 1; // Start at the real first image
+
+        function getVisibleCount() {
+            if (window.innerWidth <= 700) return 1;
+            if (window.innerWidth <= 900) return 2;
+            return 3;
+        }
+
+        function getImgWidth() {
+            return images[0].clientWidth + parseInt(getComputedStyle(images[0]).marginLeft) + parseInt(getComputedStyle(images[0]).marginRight);
+        }
+
+        function updateCarousel(animate = true) {
+            if (isTransitioning) return;
+            const imgWidth = getImgWidth();
+            track.style.transition = animate ? 'transform 0.6s cubic-bezier(0.45, 0, 0.35, 1)' : 'none';
+            track.style.transform = `translateX(-${currentIndex * imgWidth}px)`;
+        }
+
+        function handleTransitionEnd() {
+            if (!isTransitioning) return;
+            isTransitioning = false;
+            
+            const lastIndex = images.length - getVisibleCount();
+            if (currentIndex === 0) {
+                // Jumped to the end
+                currentIndex = lastIndex - 1;
+                track.style.transition = 'none';
+                track.style.transform = `translateX(-${currentIndex * getImgWidth()}px)`;
+                // Force reflow to apply the transform instantly
+                void track.offsetWidth;
+                // Restore transition for next move
+                track.style.transition = 'transform 0.6s cubic-bezier(0.45, 0, 0.35, 1)';
+            } else if (currentIndex >= lastIndex) {
+                // Jumped to the start
+                currentIndex = 1;
+                track.style.transition = 'none';
+                track.style.transform = `translateX(-${currentIndex * getImgWidth()}px)`;
+                void track.offsetWidth;
+                track.style.transition = 'transform 0.6s cubic-bezier(0.45, 0, 0.35, 1)';
+            }
+        }
+
+        function slideNext() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            currentIndex++;
+            updateCarousel(true);
+        }
+
+        function slidePrev() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            currentIndex--;
+            updateCarousel(true);
+        }
+
+        leftArrow.addEventListener('click', slidePrev);
+        rightArrow.addEventListener('click', slideNext);
+
+        track.addEventListener('transitionend', handleTransitionEnd);
+        window.addEventListener('resize', () => {
+            updateCarousel(false);
+        });
+
+        // Initial position
+        updateCarousel(false);
+    }
 }); 

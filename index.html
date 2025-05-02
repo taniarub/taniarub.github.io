@@ -18,13 +18,12 @@
                 <div class="logo">
                     <h1>Окна.бел</h1>
                 </div>
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="#catalog">Каталог</a></li>
-                        <li><a href="#calculate">Рассчитать стоимость</a></li>
-                        <li><a href="#contacts">Контакты</a></li>
-                        <li><a href="#reviews">Отзывы</a></li>
-                    </ul>
+                <nav class="nav-links">
+                    <a href="#about">О нас</a>
+                    <a href="#our-works">Наши работы</a>
+                    <a href="#reviews">Отзывы</a>
+                    <a href="#calculate">Рассчитать стоимость</a>
+                    <a href="#contacts">Контакты</a>
                 </nav>
             </div>
         </div>
@@ -43,33 +42,137 @@
         </div>         
     </section>
     
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-us-content">
+                <div class="about-us-text">
+                    <p class="about-description">Мы - команда профессионалов с более чем 15-летним опытом в установке и обслуживании окон. Наша миссия - создавать комфорт в каждом доме, используя современные технологии и качественные материалы.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Лет опыта</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5000+</span>
+                            <span class="stat-label">Довольных клиентов</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10000+</span>
+                            <span class="stat-label">Установленных окон</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-us-carousel">
+                <button class="carousel-arrow left" aria-label="Previous image">&#8592;</button>
+                <div class="carousel-track">
+                    <img src="images/okoko1.jpg" alt="Фото команды 1">
+                    <img src="images/okoko.avif" alt="Фото команды 2">
+                    <img src="images/okoko3.jpg" alt="Фото команды 3">
+                    <img src="images/okoko4.jpg" alt="Фото команды 4">
+                </div>
+                <button class="carousel-arrow right" aria-label="Next image">&#8594;</button>
+            </div>
+        </div>
+    </section>
+
     <div id="calculate" style="height: 0;"></div>
 
     <!-- Advantages Section -->
     <section class="advantages-section">
         <div class="container">
-            <div class="advantages-grid">
-                <div class="advantage-box">
-                    <i class="fas fa-truck"></i>
-                    <h3>Бесплатная доставка</h3>
-                    <p>Доставим ваш заказ быстро и бесплатно в любой уголок страны</p>
-                </div>
-                <div class="advantage-box">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>Работаем с 2009 года</h3>
-                    <p>Многолетний опыт и надежность компании</p>
-                </div>
-                <div class="advantage-box">
-                    <i class="fas fa-award"></i>
-                    <h3>Качество</h3>
-                    <p>Только высококачественные товары и услуги для наших клиентов</p>
+            <h2 class="section-title">Наши преимущества</h2>
+            <div class="advantages-container">
+                <div class="advantages-scroll">
+                    <div class="advantages-grid">
+                        <div class="advantage-box">
+                            <i class="fas fa-truck"></i>
+                            <h3>Бесплатная доставка</h3>
+                            <p>Доставим ваш заказ быстро и бесплатно в любой уголок страны</p>
+                        </div>
+                        <div class="advantage-box">
+                            <i class="fas fa-calendar-alt"></i>
+                            <h3>Работаем с 2009 года</h3>
+                            <p>Многолетний опыт и надежность компании</p>
+                        </div>
+                        <div class="advantage-box">
+                            <i class="fas fa-award"></i>
+                            <h3>Качество</h3>
+                            <p>Только высококачественные товары и услуги для наших клиентов</p>
+                        </div>
+                        <div class="advantage-box">
+                            <i class="fas fa-leaf"></i>
+                            <h3>Экологичные материалы</h3>
+                            <p>Безопасно для здоровья. Подходит для детских и спален.</p>
+                        </div>
+                    
+                        <div class="advantage-box">
+                            <i class="fas fa-palette"></i>
+                            <h3>Эстетика и функциональность</h3>
+                            <p>Современный дизайн сочетается с удобством в использовании.</p>
+                        </div>
+                        
+                        <div class="advantage-box">
+                            <i class="fas fa-window-maximize"></i>
+                            <h3>Окна и Двери ПВХ</h3>
+                            <p>Окна и Двери ПВХ под ваш размер с доставкой по РБ.<br> Делаем любой сложности конструкции из ПВХ, ламинируем и тонируем.<br> Возможен монтаж.<br> Работаем с материнским капиталом и кредитами.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Our Works Section -->
+    <section id="our-works" class="our-works-section">
+        <div class="container">
+            <h2 class="section-title">Наши работы</h2>
+            <div class="works-gallery">
+                <div class="work-item">
+                    <img src="images/balcon.jpg" alt="Установленные окна 1">
+                    <div class="work-overlay">
+                        <h3>Панорамное остекление</h3>
+                        <p>Квартира в новостройке</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <img src="images/balcon1.jpg" alt="Установленные окна 2">
+                    <div class="work-overlay">
+                        <h3>Остекление балкона</h3>
+                        <p>Частный дом</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <img src="images/balcon2.jpg" alt="Установленные окна 3">
+                    <div class="work-overlay">
+                        <h3>Энергосберегающие окна</h3>
+                        <p>Офисное здание</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <img src="images/balcon3.jpg" alt="Установленные окна 4">
+                    <div class="work-overlay">
+                        <h3>Звукоизоляционные окна</h3>
+                        <p>Городская квартира</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <h2 class="section-title">Отзывы наших клиентов</h2>
+            <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+            <script src="https://static.elfsight.com/platform/platform.js" async></script>
+            <div class="elfsight-app-8d921e3b-61b7-4130-bcda-cbdec3bc0015" data-elfsight-app-lazy style="padding-bottom: 50px;"></div>
+        </div>
+    </section>
+
     <!-- Calculate Cost Section -->
-    <section class="calculate-cost" id="calculate">
+    <section id="calculate" class="calculator-section">
         <div class="container">
             <h2 class="section-title">Рассчитать стоимость</h2>
             <div class="calculator-card">
@@ -122,8 +225,7 @@
                                     <label class="window-type-option">
                                         <input type="radio" name="window-type" value="other" required>
                                         <div class="window-type-image">
-                                            <img src="images/other-window.svg" alt="Другое окно">
-                                            <span>Другое</span>
+                                            <span>Другой тип окна</span>
                                         </div>
                                     </label>
                                 </div>
@@ -145,7 +247,7 @@
                                             <label class="opening-option">
                                                 <input type="radio" name="single-opening-type" value="fixed" required>
                                                 <div class="opening-image">
-                                                    <img src="images/oko1 copy.png" alt="Глухая створка" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L80%2C20%20L80%2C80%20L20%2C80%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E';">
+                                                    <img src="images/oko1.png" alt="Глухая створка" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L80%2C20%20L80%2C80%20L20%2C80%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E';">
                                                 </div>
                                                 <span>Глухая</span>
                                             </label>
@@ -175,7 +277,7 @@
                                             <label class="opening-option">
                                                 <input type="radio" name="double-opening-type-1" value="fixed" required>
                                                 <div class="opening-image">
-                                                    <img src="images/oko1 copy.png" alt="Глухая створка" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L80%2C20%20L80%2C80%20L20%2C80%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E';">
+                                                    <img src="images/oko1.png" alt="Глухая створка" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L80%2C20%20L80%2C80%20L20%2C80%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E';">
                                                 </div>
                                                 <span>Глухая</span>
                                             </label>
@@ -201,7 +303,7 @@
                                             <label class="opening-option">
                                                 <input type="radio" name="double-opening-type-2" value="fixed" required>
                                                 <div class="opening-image">
-                                                    <img src="images/oko1 copy.png" alt="Глухая створка" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L80%2C20%20L80%2C80%20L20%2C80%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E';">
+                                                    <img src="images/oko1.png" alt="Глухая створка" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L80%2C20%20L80%2C80%20L20%2C80%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E';">
                                                 </div>
                                                 <span>Глухая</span>
                                             </label>
@@ -231,7 +333,7 @@
                                             <label class="opening-option">
                                                 <input type="radio" name="triple-opening-type-1" value="fixed" required>
                                                 <div class="opening-image">
-                                                    <img src="images/oko1 copy.png" alt="Глухая створка" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L80%2C20%20L80%2C80%20L20%2C80%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E';">
+                                                    <img src="images/oko1.png" alt="Глухая створка" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L80%2C20%20L80%2C80%20L20%2C80%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E';">
                                                 </div>
                                                 <span>Глухая</span>
                                             </label>
@@ -257,7 +359,7 @@
                                             <label class="opening-option">
                                                 <input type="radio" name="triple-opening-type-2" value="fixed" required>
                                                 <div class="opening-image">
-                                                    <img src="images/oko1 copy.png" alt="Глухая створка" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L80%2C20%20L80%2C80%20L20%2C80%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E';">
+                                                    <img src="images/oko1.png" alt="Глухая створка" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L80%2C20%20L80%2C80%20L20%2C80%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E';">
                                                 </div>
                                                 <span>Глухая</span>
                                             </label>
@@ -283,7 +385,7 @@
                                             <label class="opening-option">
                                                 <input type="radio" name="triple-opening-type-3" value="fixed" required>
                                                 <div class="opening-image">
-                                                    <img src="images/oko1 copy.png" alt="Глухая створка" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L80%2C20%20L80%2C80%20L20%2C80%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E';">
+                                                    <img src="images/oko1.png" alt="Глухая створка" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L80%2C20%20L80%2C80%20L20%2C80%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E';">
                                                 </div>
                                                 <span>Глухая</span>
                                             </label>
@@ -313,7 +415,7 @@
                                             <label class="opening-option">
                                                 <input type="radio" name="balcony-opening-type" value="fixed" required>
                                                 <div class="opening-image">
-                                                    <img src="images/oko1 copy.png" alt="Глухая створка" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L80%2C20%20L80%2C80%20L20%2C80%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E';">
+                                                    <img src="images/oko1.png" alt="Глухая створка" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L80%2C20%20L80%2C80%20L20%2C80%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E';">
                                                 </div>
                                                 <span>Глухая</span>
                                             </label>
@@ -333,55 +435,95 @@
                                             </label>
                                         </div>
                                     </div>
-                                   
-                                    <div class="form-group">
-                                        <label>Окно 2:</label>
-                                        <div class="opening-options">
-                                            <label class="opening-option">
-                                                <input type="radio" name="balcony-window2-opening-type" value="fixed" required>
-                                                <div class="opening-image">
-                                                    <img src="images/fixed-window.png" alt="Глухое окно" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Crect%20x%3D%2220%22%20y%3D%2220%22%20width%3D%2260%22%20height%3D%2260%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E';">
-                                                </div>
-                                                <span>Глухое</span>
-                                            </label>
-                                            <label class="opening-option">
-                                                <input type="radio" name="balcony-window2-opening-type" value="turn" required>
-                                                <div class="opening-image">
-                                                    <img src="images/turn-window.png" alt="Поворотное окно" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Crect%20x%3D%2220%22%20y%3D%2220%22%20width%3D%2260%22%20height%3D%2260%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L20%2C80%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M40%2C50%20L50%2C50%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E';">
-                                                </div>
-                                                <span>Поворотное</span>
-                                            </label>
-                                            <label class="opening-option">
-                                                <input type="radio" name="balcony-window2-opening-type" value="tilt-turn" required>
-                                                <div class="opening-image">
-                                                    <img src="images/tilt-turn-window.png" alt="Поворотно-откидное окно" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Crect%20x%3D%2220%22%20y%3D%2220%22%20width%3D%2260%22%20height%3D%2260%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L20%2C80%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M50%2C20%20L50%2C30%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%2F%3E%3Cpath%20d%3D%22M40%2C50%20L50%2C50%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E';">
-                                                </div>
-                                                <span>Поворотно-откидное</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    
                                     <div class="form-group">
                                         <label>Балконная дверь:</label>
                                         <div class="opening-options">
                                             <label class="opening-option">
-                                                <input type="radio" name="balcony-door-opening-type" value="fixed" required>
-                                                <div class="opening-image">
-                                                    <img src="images/fixed-door.png" alt="Глухая дверь" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22150%22%20viewBox%3D%220%200%20100%20150%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M30%2C20%20L70%2C20%20L70%2C130%20L30%2C130%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E';">
-                                                </div>
-                                                <span>Глухая</span>
-                                            </label>
-                                            <label class="opening-option">
                                                 <input type="radio" name="balcony-door-opening-type" value="turn" required>
                                                 <div class="opening-image">
-                                                    <img src="images/turn-door.png" alt="Поворотная дверь" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22150%22%20viewBox%3D%220%200%20100%20150%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M30%2C20%20L70%2C20%20L70%2C130%20L30%2C130%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M30%2C20%20L30%2C130%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M40%2C75%20L50%2C75%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E';">
+                                                    <img src="images/oko2.png" alt="Поворотная дверь" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22150%22%20viewBox%3D%220%200%20100%20150%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M30%2C20%20L70%2C20%20L70%2C130%20L30%2C130%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M30%2C20%20L30%2C130%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M40%2C75%20L50%2C75%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E';">
                                                 </div>
                                                 <span>Поворотная</span>
                                             </label>
                                             <label class="opening-option">
                                                 <input type="radio" name="balcony-door-opening-type" value="tilt-turn" required>
                                                 <div class="opening-image">
-                                                    <img src="images/tilt-turn-door.png" alt="Поворотно-откидная дверь" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22150%22%20viewBox%3D%220%200%20100%20150%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M30%2C20%20L70%2C20%20L70%2C130%20L30%2C130%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M30%2C20%20L30%2C130%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M50%2C20%20L50%2C30%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%2F%3E%3Cpath%20d%3D%22M40%2C75%20L50%2C75%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E';">
+                                                    <img src="images/oko3.png" alt="Поворотно-откидная дверь" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22150%22%20viewBox%3D%220%200%20100%20150%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M30%2C20%20L70%2C20%20L70%2C130%20L30%2C130%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M30%2C20%20L30%2C130%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M50%2C20%20L50%2C30%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%2F%3E%3Cpath%20d%3D%22M40%2C75%20L50%2C75%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E';">
+                                                </div>
+                                                <span>Поворотно-откидная</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Балконная дверь с двухстворчатым окном options -->
+                                <div class="opening-type-section" id="balcony-door-double-options">
+                                    <div class="form-group">
+                                        <label>Окно 1:</label>
+                                        <div class="opening-options">
+                                            <label class="opening-option">
+                                                <input type="radio" name="double-opening-type-1" value="fixed" required>
+                                                <div class="opening-image">
+                                                    <img src="images/oko1.png" alt="Глухая створка" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L80%2C20%20L80%2C80%20L20%2C80%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E';">
+                                                </div>
+                                                <span>Глухая</span>
+                                            </label>
+                                            <label class="opening-option">
+                                                <input type="radio" name="double-opening-type-1" value="turn" required>
+                                                <div class="opening-image">
+                                                    <img src="images/oko2.png" alt="Поворотная створка" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L80%2C20%20L80%2C80%20L20%2C80%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L20%2C80%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M25%2C50%20L35%2C50%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E';">
+                                                </div>
+                                                <span>Поворотная</span>
+                                            </label>
+                                            <label class="opening-option">
+                                                <input type="radio" name="double-opening-type-1" value="tilt-turn" required>
+                                                <div class="opening-image">
+                                                    <img src="images/oko3.png" alt="Поворотно-откидная створка" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L80%2C20%20L80%2C80%20L20%2C80%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L20%2C80%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M50%2C20%20L50%2C30%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%2F%3E%3Cpath%20d%3D%22M25%2C50%20L35%2C50%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E';">
+                                                </div>
+                                                <span>Поворотно-откидная</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Окно 2:</label>
+                                        <div class="opening-options">
+                                            <label class="opening-option">
+                                                <input type="radio" name="double-opening-type-2" value="fixed" required>
+                                                <div class="opening-image">
+                                                    <img src="images/oko1.png" alt="Глухая створка" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L80%2C20%20L80%2C80%20L20%2C80%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E';">
+                                                </div>
+                                                <span>Глухая</span>
+                                            </label>
+                                            <label class="opening-option">
+                                                <input type="radio" name="double-opening-type-2" value="turn" required>
+                                                <div class="opening-image">
+                                                    <img src="images/oko2.png" alt="Поворотная створка" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L80%2C20%20L80%2C80%20L20%2C80%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L20%2C80%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M25%2C50%20L35%2C50%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E';">
+                                                </div>
+                                                <span>Поворотная</span>
+                                            </label>
+                                            <label class="opening-option">
+                                                <input type="radio" name="double-opening-type-2" value="tilt-turn" required>
+                                                <div class="opening-image">
+                                                    <img src="images/oko3.png" alt="Поворотно-откидная створка" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L80%2C20%20L80%2C80%20L20%2C80%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M20%2C20%20L20%2C80%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M50%2C20%20L50%2C30%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%2F%3E%3Cpath%20d%3D%22M25%2C50%20L35%2C50%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E';">
+                                                </div>
+                                                <span>Поворотно-откидная</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Балконная дверь:</label>
+                                        <div class="opening-options">
+                                            <label class="opening-option">
+                                                <input type="radio" name="balcony-door-double-door-opening-type" value="turn" required>
+                                                <div class="opening-image">
+                                                    <img src="images/oko2.png" alt="Поворотная дверь" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22150%22%20viewBox%3D%220%200%20100%20150%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M30%2C20%20L70%2C20%20L70%2C130%20L30%2C130%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M30%2C20%20L30%2C130%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M40%2C75%20L50%2C75%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E';">
+                                                </div>
+                                                <span>Поворотная</span>
+                                            </label>
+                                            <label class="opening-option">
+                                                <input type="radio" name="balcony-door-double-door-opening-type" value="tilt-turn" required>
+                                                <div class="opening-image">
+                                                    <img src="images/oko3.png" alt="Поворотно-откидная дверь" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22150%22%20viewBox%3D%220%200%20100%20150%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23f8f9fa%22%2F%3E%3Cpath%20d%3D%22M30%2C20%20L70%2C20%20L70%2C130%20L30%2C130%20Z%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M30%2C20%20L30%2C130%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M50%2C20%20L50%2C30%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%2F%3E%3Cpath%20d%3D%22M40%2C75%20L50%2C75%22%20stroke%3D%22%234da9ff%22%20stroke-width%3D%222%22%2F%3E%3C%2Fsvg%3E';">
                                                 </div>
                                                 <span>Поворотно-откидная</span>
                                             </label>
@@ -511,45 +653,6 @@
         </div>
     </div>
 
-    <!-- Catalog Section -->
-    <section class="catalog" id="catalog">
-        <div class="container">
-            <h2 class="section-title">Выбрать окна</h2>
-            <div class="catalog-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/plastic-window.jpg" alt="Пластиковое окно">
-                    </div>
-                    <div class="product-info">
-                        <h3>Пластиковые окна</h3>
-                        <p>Современные пластиковые окна обеспечивают отличную теплоизоляцию и защиту от шума для вашего дома.</p>
-                        <a href="#contacts" class="btn btn-primary">Заказать замер</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/aluminum-window.jpg" alt="Алюминиевое окно">
-                    </div>
-                    <div class="product-info">
-                        <h3>Алюминиевые окна</h3>
-                        <p>Надежные и современные алюминиевые окна идеально подходят для офисов и коммерческих помещений.</p>
-                        <a href="#contacts" class="btn btn-primary">Заказать замер</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/double-glazed.jpg" alt="Стеклопакет">
-                    </div>
-                    <div class="product-info">
-                        <h3>Стеклопакеты</h3>
-                        <p>Высококачественные стеклопакеты с энергосберегающими и шумоизоляционными свойствами.</p>
-                        <a href="#contacts" class="btn btn-primary">Заказать замер</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contacts Section -->
     <section class="contacts" id="contacts">
         <div class="container">
@@ -575,8 +678,14 @@
                         <div class="contact-item">
                             <i class="far fa-clock"></i>
                             <div>
-                                <h4>Время работы</h4>
-                                <span>Пн-Пт: 9:00 - 18:00, Сб: 10:00 - 15:00</span>
+                                <h4>Режим работы:</h4>
+                                <span>Понедельник: 10:00-19:00<br>
+                                Вторник: 10:00-19:00<br>
+                                Среда: 10:00-19:00<br>
+                                Четверг: 10:00-19:00<br>
+                                Пятница: 10:00-19:00<br>
+                                Суббота: 10:00-18:00<br>
+                                Воскресенье: 10:00-18:00</span>
                             </div>
                         </div>
                     </div>
@@ -586,10 +695,9 @@
                             <a href="https://wa.me/375293423221" class="social-btn whatsapp" target="_blank">
   <i class="fab fa-whatsapp"></i> WhatsApp
 </a>
-                            <a href="https://t.me/NaTaScHaRuB" target="_blank" class="social-btn telegram">
-  <i class="fab fa-telegram-plane"></i> Telegram
+                            <a href="https://instagram.com" target="_blank" class="social-btn instagram">
+  <i class="fab fa-instagram"></i> Instagram
 </a>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -597,18 +705,18 @@
                     <div class="contact-form">
                         <h3>Оставить заявку</h3>
                         <p>Заполните форму и мы свяжемся с вами в ближайшее время</p>
-                        <form id="request-form">
+                        <form id="request-form" action="https://formspree.io/f/meogekdy" method="POST">
                             <div class="form-group">
                                 <label for="name">Ваше имя</label>
-                                <input type="text" id="name" required>
+                                <input type="text" id="name" name="name" required>
                             </div>
                             <div class="form-group">
                                 <label for="phone">Номер телефона</label>
-                                <input type="tel" id="phone" required>
+                                <input type="tel" id="phone" name="phone" required>
                             </div>
                             <div class="form-group">
                                 <label for="comment">Комментарий</label>
-                                <textarea id="comment" rows="4"></textarea>
+                                <textarea id="comment" name="comment" rows="4"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Отправить заявку</button>
                         </form>
@@ -618,11 +726,6 @@
         </div>
     </section>
 
-    <!-- Reviews Section -->
- 
-<!-- Elfsight Google Reviews | Untitled Google Reviews -->
-<script src="https://static.elfsight.com/platform/platform.js" async></script>
-<div class="elfsight-app-8d921e3b-61b7-4130-bcda-cbdec3bc0015" data-elfsight-app-lazy></div>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -631,20 +734,17 @@
                     <h2>Окна.бел</h2>
                     <p>Качественные окна и профессиональная установка</p>
                 </div>
-                <div class="footer-links">
-                    <h3>Навигация</h3>
-                    <ul>
-                        <li><a href="#catalog">Каталог</a></li>
-                        <li><a href="#calculate">Рассчитать стоимость</a></li>
-                        <li><a href="#contacts">Контакты</a></li>
-                        <li><a href="#reviews">Отзывы</a></li>
-                    </ul>
+                <div class="footer-nav">
+                    <a href="#about">О нас</a>
+                    <a href="#reviews">Отзывы</a>
+                    <a href="#calculate">Рассчитать стоимость</a>
+                    <a href="#contacts">Контакты</a>
                 </div>
                 <div class="footer-contact">
                     <h3>Контакты</h3>
-                    <p><i class="fas fa-phone"></i> +375 XX XXX-XX-XX</p>
-                    <p><i class="fas fa-envelope"></i> info@okna.bel</p>
-                    <p><i class="fas fa-map-marker-alt"></i> г. Минск, ул. Примерная, д. 123</p>
+                    <p><i class="fas fa-phone"></i> +375 29 342-32-21</p>
+                    <p><i class="fas fa-envelope"></i> vitaliy9977@mail.ru</p>
+                    <p><i class="fas fa-map-marker-alt"></i> г.Лельчицы, ул. Советская, д. 79/11</p>
                 </div>
             </div>
             <div class="footer-bottom">

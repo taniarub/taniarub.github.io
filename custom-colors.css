@@ -127,7 +127,7 @@ body { background-color: var(--light-color); color: var(--text-color); }
     }
 }
 
-.advantage-box { background-color: var(--light-color); border: 1px solid var(--border-color); }
+.advantage-box { background-color: var(--light-color); border: none; }
 .advantage-box i { color: var(--primary-color); }
 .advantage-box h3 { color: var(--primary-color); }
 .advantage-box p { color: var(--text-color); }
