@@ -5,7 +5,7 @@
   --light-color: #FFFFFF;    /* White background */
   --accent-color: #6b788e;   /* Gray for navigation */
   --dark-color: #0d1c2e;     /* Darker navy */
-  --text-color: #333333;     /* Dark text */
+  --text-color: #333333;     /* dark text */
   --border-color: #e5e5e5;   /* Light gray for borders */
 }
 
@@ -42,6 +42,7 @@ body { background-color: var(--light-color); color: var(--text-color); }
   background: var(--light-color);
   padding: 60px 0;
   color: var(--primary-color);
+  margin: 20px;
 }
 
 .hero::before {
@@ -57,6 +58,7 @@ body { background-color: var(--light-color); color: var(--text-color); }
   flex: 1;
   background: transparent; /* Remove any background */
   padding: 0;
+  box-shadow: none; /* Remove any shadow */
 }
 
 .hero-image {
@@ -87,8 +89,7 @@ body { background-color: var(--light-color); color: var(--text-color); }
   
 }
 .hero h2, .hero p {
-  color: #ffffff; /* Pure white */
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Slight glow effect */
+  color: #1a3352; /* Dark navy blue */
   font-weight: 600; /* Make text slightly bolder */
 }
 
@@ -104,24 +105,58 @@ body { background-color: var(--light-color); color: var(--text-color); }
   border-width: 2px; /* Thicker border */
 }
 
-.hero .search-btn {
-  background-color: var(--primary-color);
-  color: white;
-  border-radius: 30px;
-  padding: 10px 20px;
-  transition: all 0.3s ease;
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
 }
 
-.hero .search-btn:hover {
+.hero-btn {
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-btn i {
+  margin-right: 8px;
+}
+
+.hero-btn.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.hero-btn.btn-primary:hover {
   background-color: var(--secondary-color);
   transform: translateY(-2px);
 }
-.hero h2, 
+
+.hero-btn.btn-outline {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background-color: transparent;
+}
+
+.hero-btn.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
 .hero p {
     font-weight: 600; /* Semi-bold */
     letter-spacing: 0.5px; /* Slight space between letters */
-    color: var(--text-color); /* Dark text color */
-    text-shadow: none; /* Remove text shadow */
+    color: #1a3352; /* Dark navy blue */
+}
+
+.hero h2 {
+    font-weight: 600; /* Semi-bold */
+    letter-spacing: 0.5px; /* Slight space between letters */
+    color: #1a3352; /* Dark navy blue */
 }
 
 /* Additional enhancement for larger devices */
@@ -146,6 +181,7 @@ body { background-color: var(--light-color); color: var(--text-color); }
 .advantage-box h3 { color: var(--primary-color); }
 .advantage-box p { color: var(--text-color); }
 
+.calculator-section { padding: 60px 0; }
 .calculate-cost { background-color: var(--light-color); }
 .calculate-cost .section-title { color: var(--primary-color); }
 .calculate-cost .section-title::after { background-color: var(--primary-color); }
@@ -160,9 +196,10 @@ body { background-color: var(--light-color); color: var(--text-color); }
     background-size: cover;
     background-position: center;
     position: relative;
-    padding: 0 0 100px 0;
+    padding: 0;
     color: var(--text-color);
     height: 100vh; /* Make the hero section full viewport height */
+    overflow: hidden; /* Ensure the image doesn't spill out */
 }
 
 .hero::before {
@@ -181,7 +218,7 @@ body { background-color: var(--light-color); color: var(--text-color); }
     max-width: 600px;
     margin: 0 auto 0 0;
     padding: 40px;
-    border-radius: 30px; /* Increase border radius for more rounded corners */
+    border-radius: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 

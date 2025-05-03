@@ -193,16 +193,14 @@ ul {
 .hero-content {
     position: relative;
     z-index: 2;
-    background: #fff;
-    border-radius: 30px;
+    background: transparent;
+    border-radius: 0;
     box-shadow: none;
-    padding: 48px;
+    padding: 0;
     margin-left: 0;
     margin-top: 20px;
     width: 100%;
-    margin-top: 20px;
     max-width: 500px;
-    width: 100%;
     color: var(--text-color);
 }
 
@@ -371,6 +369,7 @@ ul {
     align-items: center;
     text-align: center;
     border: none;
+    margin-bottom: 20px;
 }
 
 .advantage-box i, .advantage-box svg {
@@ -391,7 +390,7 @@ ul {
 }
 
 .advantage-box h3 {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 700;
     color: #22314a;
     margin-bottom: 12px;
@@ -920,7 +919,7 @@ ul {
 /* Footer */
 .footer {
     background-color: var(--dark-color);
-    color: #9ca5af;
+    color: #d1d5db;
     padding: 60px 0 30px;
 }
 
@@ -938,7 +937,7 @@ ul {
 }
 
 .footer-logo p {
-    color: #9ca5af;
+    color: #d1d5db;
     line-height: 1.6;
 }
 
@@ -955,8 +954,8 @@ ul {
     gap: 10px;
 }
 
-.footer-links a {
-    color: #9ca5af;
+.footer-links a, .footer-nav a {
+    color: #ffffff;
     transition: color 0.3s ease;
     padding: 3px 0; /* Add vertical padding */
     font-weight: 500; /* Slightly bolder */
@@ -964,7 +963,7 @@ ul {
     display: inline-block; /* Needed for padding and underline */
 }
 
-.footer-links a::after {
+.footer-links a::after, .footer-nav a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -975,11 +974,11 @@ ul {
     transition: width 0.3s ease;
 }
 
-.footer-links a:hover {
+.footer-links a:hover, .footer-nav a:hover {
     color: var(--light-color);
 }
 
-.footer-links a:hover::after {
+.footer-links a:hover::after, .footer-nav a:hover::after {
     width: 100%;
 }
 
@@ -988,6 +987,7 @@ ul {
     display: flex;
     align-items: center;
     gap: 10px;
+    color: #d1d5db;
 }
 
 .footer-contact i {
@@ -998,6 +998,7 @@ ul {
     padding-top: 30px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     text-align: center;
+    color: #d1d5db;
 }
 
 /* Scroll to Top Button */
