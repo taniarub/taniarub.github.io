@@ -3,7 +3,7 @@ name: Cache Bust
 on:
   push:
     branches:
-      - main  # 或你的發布分支
+      - main
 
 jobs:
   cache-bust:
@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}  # 改為使用 PAT Token
 
       - name: Replace version hash
         run: |
@@ -23,4 +25,4 @@ jobs:
           git config user.email "github-actions@github.com"
           git add index.html
           git commit -m "Auto update cache-busting hash [ci skip]" || echo "No changes to commit"
-          git push
+          git push origin main
